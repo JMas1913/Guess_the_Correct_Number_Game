@@ -1,10 +1,13 @@
 body {
-    background-color:deepskyblue;
+    background-color:whitesmoke;
     text-align: center;
     font-size: larger;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-h1 {
-    color: darkorchid;  /* Chosen for Zee */
+
+.landingPageImage {
+    display: flexbox; 
+    max-height: 25%;
+
 }
