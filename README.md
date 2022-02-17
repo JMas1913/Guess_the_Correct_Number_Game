@@ -18,3 +18,5 @@ Rules of the game are simple. Try and guess the correct number between 1 and 100
 -[Focus Method](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus)
 
 -[For/of Loops](https://www.w3schools.com/js/js_loop_forof.asp)
+
+-[.textContent](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
