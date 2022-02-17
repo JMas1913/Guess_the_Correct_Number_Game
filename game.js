@@ -1,31 +1,36 @@
 const guesses = document.querySelector('.guesses');
-const lastResult = document.querySelector('.lastResult');
-const lowOrHi = document.querySelector('.lowOrHi');
+const lastChance = document.querySelector('.lastChance');
+const lowOrHi = document.querySelector('.lowOrHi'); //determins if the guessed number is lower or higher than the number chosen by the computer
 const guessSubmit = document.querySelector('.guessSubmit');
 const guessField = document.querySelector('.guessField');
-let guessCount = 1;
-let randomNumber = Math.floor(Math.random() * 100) + 1;
+let guessCount = 1; //starting count number
+let randomNumber = Math.floor(Math.random() * 100) + 1; //randomized whole integer between 1 and 100
 
 function checkGuess() {
-  const userGuess = Number(guessField.value);
+  const userGuess = Number(guessField.value); //takes the input value
   if (guessCount === 1) {
-    guesses.textContent = 'The previous guesses was: ';
+    guesses.textContent = 'The previous guess was: ';
   }
 
-  guesses.textContent += userGuess + ' ';
+  guesses.textContent += userGuess + ' '; // displays all the guesses
 
   if (userGuess === randomNumber) {
-    lastResult.textContent = 'Congratulations! You got it right!';
-    lastResult.style.backgroundColor = 'green';
+    //user guesses correctly
+    lastChance.textContent =
+      'Congratulations! You guessed correctly in ' + guessCount + ' guesses!';
+    lastChance.style.backgroundColor = 'green';
     lowOrHi.textContent = '';
     setGameOver();
   } else if (guessCount === 10) {
-    lastResult.textContent = 'GAME OVER!!!';
+    //reached the max amount of guesses and immediately ends the game
+    lastChance.textContent = 'NO MORE CHANCES!! You used up all your guesses';
     lowOrHi.textContent = '';
     setGameOver();
   } else {
-    lastResult.textContent = 'Wrong!';
-    lastResult.style.backgroundColor = 'red';
+    //logic for the game
+    lastChance.textContent =
+      'Wrong! You have ' + (10 - guessCount) + ' guesses left';
+    lastChance.style.backgroundColor = 'red';
     if (userGuess < randomNumber) {
       lowOrHi.textContent = 'Last guess was too low!';
     } else if (userGuess > randomNumber) {
@@ -33,7 +38,7 @@ function checkGuess() {
     }
   }
 
-  guessCount++;
+  guessCount++; //keeps track of amount of guesses
   guessField.value = '';
 }
 
@@ -50,6 +55,7 @@ function setGameOver() {
 
 function resetGame() {
   guessCount = 1;
+
   const resetParas = document.querySelectorAll('.resultParas p');
   for (const resetPara of resetParas) {
     resetPara.textContent = '';
@@ -59,6 +65,6 @@ function resetGame() {
   guessField.disabled = false;
   guessSubmit.disabled = false;
   guessField.value = '';
-  lastResult.style.backgroundColor = 'white';
+  lastChance.style.backgroundColor = 'white';
   randomNumber = Math.floor(Math.random() * 100) + 1;
 }

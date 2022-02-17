@@ -15,8 +15,12 @@ Rules of the game are simple. Try and guess the correct number between 1 and 100
 
 -[Number Image](https://unsplash.com/photos/WV6hCFDT9Rg)
 
--[Focus Method](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus)
-
--[For/of Loops](https://www.w3schools.com/js/js_loop_forof.asp)
+-[For...of Loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
 
 -[.textContent](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
+
+-[ParentNode](https://developer.mozilla.org/en-US/docs/Web/API/Node/parentNode)
+
+-[Reference notes on  loops](https://github.com/SEI-R-11-8/u1_lesson_loops_and_control_flow)
+
+-[How to display all guesses](https://stackoverflow.com/questions/30392345/javascript-guessing-game-keeping-a-log-of-guesses)
