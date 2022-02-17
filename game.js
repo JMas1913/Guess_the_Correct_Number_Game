@@ -4,9 +4,9 @@ const lowOrHi = document.querySelector('.lowOrHi'); //determins if the guessed n
 const guessSubmit = document.querySelector('.guessSubmit');
 const guessField = document.querySelector('.guessField');
 let guessCount = 1; //starting count number
-let randomNumber = Math.floor(Math.random() * 100) + 1; //randomized whole integer between 1 and 100
+let randNum = Math.floor(Math.random() * 100) + 1; //randomized whole integer between 1 and 100
 
-function checkGuess() {
+function playGame() {
   const userGuess = Number(guessField.value); //takes the input value
   if (guessCount === 1) {
     guesses.textContent = 'The previous guess was: ';
@@ -14,7 +14,7 @@ function checkGuess() {
 
   guesses.textContent += userGuess + ' '; // displays all the guesses
 
-  if (userGuess === randomNumber) {
+  if (userGuess === randNum) {
     //user guesses correctly
     lastChance.textContent =
       'Congratulations! You guessed correctly in ' + guessCount + ' guesses!';
@@ -31,9 +31,9 @@ function checkGuess() {
     lastChance.textContent =
       'Wrong! You have ' + (10 - guessCount) + ' guesses left';
     lastChance.style.backgroundColor = 'red';
-    if (userGuess < randomNumber) {
+    if (userGuess < randNum) {
       lowOrHi.textContent = 'Last guess was too low!';
-    } else if (userGuess > randomNumber) {
+    } else if (userGuess > randNum) {
       lowOrHi.textContent = 'Last guess was too high!';
     }
   }
@@ -42,7 +42,7 @@ function checkGuess() {
   guessField.value = '';
 }
 
-guessSubmit.addEventListener('click', checkGuess);
+guessSubmit.addEventListener('click', playGame);
 
 function setGameOver() {
   guessField.disabled = true;
@@ -66,5 +66,5 @@ function resetGame() {
   guessSubmit.disabled = false;
   guessField.value = '';
   lastChance.style.backgroundColor = 'white';
-  randomNumber = Math.floor(Math.random() * 100) + 1;
+  randNum = Math.floor(Math.random() * 100) + 1;
 }

@@ -4,6 +4,8 @@ body {
     min-width: 480px;
     margin: auto;
     font-family: 'Times New Roman', Times, serif;
+    background-color: wheat;
+    display: grid;
 }
 
 .lastChance {
